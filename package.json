@@ -1,0 +1,24 @@
+{
+  "name": "nodefromtask6",
+  "version": "1.0.0",
+  "description": "Node.js course",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon app.js",
+    "start-server": "node app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/GitShaAli/NodeJsTasks.git"
+  },
+  "author": "Shafeeq",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/GitShaAli/NodeJsTasks/issues"
+  },
+  "homepage": "https://github.com/GitShaAli/NodeJsTasks#readme",
+  "devDependencies": {
+    "nodemon": "^2.0.19"
+  }
+}
