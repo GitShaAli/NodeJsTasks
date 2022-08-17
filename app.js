@@ -6,22 +6,30 @@ const http = require('http');
 
 // console.log(routes.someText)
 
-const express = require('express');
+// app.use('/',(req,res,next)=>{
+//     console.log("This always runs")
+//     next();
+// })
 
+const express = require('express');
+const bodyParser = require('body-parser');
 const app = express();
 
-app.use((req,res,next)=>{
-    console.log("In the middleware")
-    next();
+
+app.use(bodyParser.urlencoded({extended: false}))
+
+app.use('/add-product',(req,res,next)=>{
+    res.send('<form action="/product" method = "POST"><input type="text" name="title"><input type="text" name="size"><button type="submit">Add Product</button></form>') ;
 })
 
-app.use((req,res,next)=>{
-    console.log("In the next middleware");
+app.post('/product',(req,res,next)=>{
+    console.log(`Title : ${req.body.title} &  Size : ${req.body.size}`);
+    res.redirect('/');
+})
+
+app.use('/',(req,res,next)=>{
     res.send('<h1> hello to node js </h1>') ;
-    // res.send( { key1: "value" })
 })
-// const server= http.createServer(app)
 
-// server.listen(3000)
 
 app.listen(3000);
